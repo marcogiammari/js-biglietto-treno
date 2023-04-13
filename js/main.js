@@ -3,8 +3,10 @@ function calcPrice() {
     let age = parseInt(prompt("Quanti anni hai?"));
     let price = km*0.21;
     if (isNaN(km) || isNaN(age)) {
-        alert("Oops, alcuni dati sono errati. Riprova!");
-        calcPrice();
+        retry = confirm("Oops, alcuni dati sono errati. Vuoi riprovare?");
+        if (retry) {
+            calcPrice(); 
+        }
     }
     else {
         if (age < 18) {
